@@ -22,7 +22,7 @@ public class Stack {
         if (size == 0) {
             System.out.println("No element in stack");
         }
-        else --size;
+        stack[--size] = 0;
     }
 
     @Override
@@ -32,12 +32,13 @@ public class Stack {
 
     public static void main(String[] args) {
         Stack mystack = new Stack(2);
-        mystack.push(7);
+        System.out.println(mystack);
 
-        mystack.pop();
+        mystack.push(7);
+        mystack.push(5);
+
         mystack.pop();
 
         System.out.println(mystack);
     }
 }
-
