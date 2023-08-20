@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Reverse {
     public static void main(String[] args) {
-
+        
         int number; int reverse = 0;
         int remainder;
 
@@ -18,7 +18,7 @@ public class Reverse {
             reverse = reverse * 10 + remainder;
             number = number / 10;
         }
-        System.out.printf("The reverse of %d is: %d%n", number, reverse);
-
+        System.out.printf("The reverse of %d is: %d%n",
+                number, reverse);
     }
 }

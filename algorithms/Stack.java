@@ -1,31 +1,43 @@
 package algorithms;
 
+import java.util.Arrays;
+
 public class Stack {
     private final int[] stack;
-    private int element;
+    private int size;
+
     public Stack(int size) {
         stack = new int[size];
     }
 
     public void push(int item) {
-        if (element == stack.length-1)
-            System.out.println("Stack is full");
-        else stack[++element] = item;
+        if (stack.length == size) {
+            System.out.println(
+                    "Cannot add value " + item + ", stack is full");
+        }
+        else stack[size++] = item;
     }
 
-    public int pop() {
-        if (element < 0) {
+    public void pop() {
+        if (size == 0) {
             System.out.println("No element in stack");
-            return 0;
         }
-        else
-            return stack[element--];
+        else --size;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(stack);
     }
 
     public static void main(String[] args) {
-        Stack mystack = new Stack(5);
+        Stack mystack = new Stack(2);
         mystack.push(7);
-        System.out.println(mystack.pop());
+
+        mystack.pop();
+        mystack.pop();
+
         System.out.println(mystack);
     }
 }
+
